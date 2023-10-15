@@ -11,7 +11,7 @@
 	const mongoose = require("mongoose");	---> Provides an elegant and simpler way to work with MongoDB
 	const cors = require("cors"); ---> Enable or disable cross-origin requests, allowing or restricting access to resources on a web server from different domains.
 	const app = express();	---> Creates an instance of the Express application, which is used to define routes, middleware, and handle HTTP requests.
-	require("dotenv").config();
+	require("dotenv").config(); ---> accessing dotenv file content
 	app.use(cors()); ---> Adds CORS middleware to the Express application. It allows cross-origin requests from any domain by default. 
                               This is a common configuration for development purposes but may need to be more restrictive in a production environment.
 5 - setup routes 
@@ -46,3 +46,49 @@
           	console.log("Server listening on port 3000");
   	  });
 	});
+
+Two things necessary to understand are :
+
+1- Models
+	Will be like below code
+
+	const mongoose = require("mongoose");
+
+	// Define the schema
+	const gradeSchema = new mongoose.Schema({
+	  _id: String,
+	  recrd: String,
+	  vesslterms: String,
+	  feature_type: String,
+	  chart: String,
+	  latdec: Number,
+	  londec: Number,
+	  gp_quality: String,
+	  depth: Number,
+	  sounding_type: String,
+	  history: String,
+	  quasou: String,
+	  watlev: String,
+	  coordinates: [Number], // Assuming coordinates is an array of numbers
+	});
+
+	// Create the Grade model
+	const Grade = mongoose.model("shipwrecks", gradeSchema);
+
+	module.exports = Grade; // Export the model
+
+2- Routes
+	looks like below code
+
+	const express = require("express");
+	const router = express.Router();
+	const Grade = require("../models/Grade");
+
+	router.get("/api/grades", async (req, res) => {
+	  const grades = await Grade.find();
+	  res.json(grades);
+	});
+
+	module.exports = router;
+	
+
