@@ -1,0 +1,5 @@
+Number to word conversion
+
+5678567234567890098762345679874567
+
+Fifty six lakhs seventy eight thousand five hundred sixty seven

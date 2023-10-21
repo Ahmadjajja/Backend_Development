@@ -3,7 +3,7 @@
 2 - npm install -g nodemon ---> nodemon is a utility that monitors for changes in files in a Node.js
                                 application and automatically restarts the server when changes are detected.
 
-3 - npm install cors dotenv express mongoose --save-dev nodemon ---> Basic dependencies to create a server
+3 - npm install cors dotenv express mongoose --save-dev ---> Basic dependencies to create a server
 
 4 - Importing libraries in index.js file
 
@@ -36,16 +36,7 @@
 
 7- Checking connection is connected successfuly or not
 
-	const db = mongoose.connection;
-	db.on("error", console.error.bind(console, "connection error:"));
-	db.once("open", () => {
-  	console.log("Connected to MongoDB");
-
-	  // once connected, start the server
-	  app.listen(3000, () => {
-          	console.log("Server listening on port 3000");
-  	  });
-	});
+	
 
 Two things necessary to understand are :
 
