@@ -14,6 +14,7 @@
 	require("dotenv").config(); ---> accessing dotenv file content
 	app.use(cors()); ---> Adds CORS middleware to the Express application. It allows cross-origin requests from any domain by default. 
                               This is a common configuration for development purposes but may need to be more restrictive in a production environment.
+	app.use(express.json()); ---> defining middleware to allow json data while calling api
 5 - setup routes 
 
 	const gradeRoutes = require("./src/routes/GradeRoutes");
