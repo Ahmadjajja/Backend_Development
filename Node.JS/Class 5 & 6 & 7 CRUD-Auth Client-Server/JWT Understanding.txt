@@ -1,0 +1,5 @@
+	client               ------------------->         Server (login api)
+
+							Generate JWT
+							(Data ---> 2345xcv34)
+        2345xcv34            <------------------         2345xcv34(Contains user info)
