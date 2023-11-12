@@ -1,9 +1,11 @@
 import React from "react";
+import Auth from "./Auth/Auth";
 import Users from "./Users/Users";
 function App() {
   return (
     <div>
-      <Users />
+      <Auth />
+      {/* <Users /> */}
     </div>
   );
 }
